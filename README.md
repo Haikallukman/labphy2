@@ -35,3 +35,5 @@ flowchart TD
 ````
 
 ## Contoh Output Program
+
+![output](outputptogramticket.png)
