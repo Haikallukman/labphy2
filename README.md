@@ -97,4 +97,13 @@ flowchart TD
 ````
 ## contoh output program
 
-![output](output/programkalkulator.png)
+![output](programkalkulator.png)
+
+## Cara Kerja Program
+
+### Alur Proses Kalkulator
+1. Program meminta input angka pertama
+2. Program meminta input angka kedua
+3. Program meminta input operator matematika
+4. Fungsi `kalkulator()` memproses input sesuai operator
+5. Menampilkan hasil perhitungan
