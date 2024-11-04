@@ -1,47 +1,37 @@
-# program kalkulator sederhana
-program ini bertujuan untuk menghitung operasi aritmatika sederhana
+# Sistem Pembelian Tiket
+Program sederhana untuk menghitung harga tiket berdasarkan jenis tiket dan status member.
 
-## kode program
+## Deskripsi Program
+Program ini memungkinkan pengguna untuk:
 
-```phyton
-# mendefinisikan operasi aritmatika
-def tambah(x, y):
-    return x + y
+Memilih jenis tiket (VIP/Reguler)
+Menentukan status member
+Mendapatkan perhitungan harga tiket final dengan diskon jika memiliki kartu member
 
-def kurang(x, y):
-    return x - y
+## Flowchart Ticket
+````mermaid
+flowchart TD
+    A([Start]) --> B[Set Harga VIP = 100000]
+    B --> C[Set Harga Reguler = 50000]
+    C --> D[/Input Jenis Tiket/]
+    
+    D --> E{Jenis Tiket Valid?}
+    E -->|VIP| F[Tetapkan Harga = 100000]
+    E -->|Reguler| G[Tetapkan Harga = 50000]
+    E -->|Tidak Valid| H[/Tampilkan Pesan Error/]
+    
+    F --> I[/Input Status Member/]
+    G --> I
+    H --> J([Exit])
+    
+    I --> K{Member?}
+    K -->|Ya| N[harga_ticket -= harga_ticket * 0.20]
+    K -->|Tidak| O[/Tampilkan Harga Akhir/]
+    
+    
+    N --> O[/Tampilkan Harga Akhir/]
+    O --> P([End])
 
-def kali(x, y):
-    return x * y
+````
 
-def bagi(x, y):
-    if y == 0:
-        return "Tidak bisa membagi dengan nol!"
-    return x / y
-
-def kalkulator():
-    print("Pilih operasi:")
-    print("1. Tambah")
-    print("2. Kurang")
-    print("3. Kali")
-    print("4. Bagi")
-
-    pilihan = input("Masukkan pilihan (1/2/3/4): ")
-
-    if pilihan in ('1', '2', '3', '4'):
-        angka1 = float(input("Masukkan angka pertama: "))
-        angka2 = float(input("Masukkan angka kedua: "))
-
-        if pilihan == '1':
-            print(f"{angka1} + {angka2} = {tambah(angka1, angka2)}")
-        elif pilihan == '2':
-            print(f"{angka1} - {angka2} = {kurang(angka1, angka2)}")
-        elif pilihan == '3':
-            print(f"{angka1} * {angka2} = {kali(angka1, angka2)}")
-        elif pilihan == '4':
-            print(f"{angka1} / {angka2} = {bagi(angka1, angka2)}")
-    else:
-        print("Pilihan tidak valid!")
-
-if __name__ == "__main__":
-    kalkulator()
+## Contoh Output Program
